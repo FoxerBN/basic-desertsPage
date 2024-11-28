@@ -1,0 +1,34 @@
+.navbar {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  z-index: 1000; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-icon {
+  color: #ddd8d5;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.navbar-icon:hover {
+  color: #c89b72;
+  transform: scale(1.1);
+}
+
+.navbar-logo {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  color: #42250e;
+}

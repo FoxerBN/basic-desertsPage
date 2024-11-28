@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  max-width: 100%;
+  min-height: 100vh; 
+  background: linear-gradient(135deg, #8b4513, #d2b48c, #f5f5dc, #a0522d);
+  background-size: 300% 300%; 
+  animation: coffeeGradient 10s ease infinite;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.page-container{
+  display: flex;
+  flex-direction: column; 
+  min-height: 100vh; 
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
