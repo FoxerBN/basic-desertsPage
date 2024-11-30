@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className='navbar'>
-      <div className="navbar-logo">MyApp</div>
+      <div className="navbar-logo"><img style={{width: '100px'}} src="/logo.png" alt="" /></div>
       <div className="navbar-icons">
         <a href="/" className="navbar-icon">
           <FaHome title="Home" />

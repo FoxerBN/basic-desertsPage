@@ -51,8 +51,8 @@ const Products = () => {
         </motion.div>
       </div>
       <ReactPaginate
-        previousLabel={"← Previous"}
-        nextLabel={"Next →"}
+        previousLabel={"←"}
+        nextLabel={"→"}
         breakLabel={"..."}
         pageCount={pageCount}
         marginPagesDisplayed={1}
