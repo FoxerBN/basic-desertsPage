@@ -1,4 +1,5 @@
 import { FaHome, FaEnvelope } from 'react-icons/fa';
+import { LuDessert } from "react-icons/lu";
 import './Navigation.css';
 
 const Navbar = () => {
@@ -11,7 +12,10 @@ const Navbar = () => {
           <FaHome title="Home" />
         </a>
         <a href="#contact" className="navbar-icon">
-          <FaEnvelope title="Contact Us" />
+          <FaEnvelope />
+        </a>
+        <a href="#products" className="navbar-icon">
+          <LuDessert />
         </a>
       </div>
     </nav>
