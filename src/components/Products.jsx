@@ -39,13 +39,14 @@ const Products = () => {
           {currentItems.map((dessert) => (
             <motion.div
               key={dessert.idMeal}
-              id={dessert.idMeal} // Use ID for tooltip positioning
+              id={dessert.idMeal}
               className="product-card"
-              onMouseEnter={(e) => handleHover(dessert.idMeal, e.currentTarget)} // Pass ID and element
-              onMouseLeave={clearHover} // Remove tooltip
+              onMouseEnter={(e) => handleHover(dessert.idMeal, e.currentTarget, desserts)} // Pass desserts as well
+              onMouseLeave={clearHover}
             >
               <img src={dessert.strMealThumb} alt={dessert.strMeal} className="product-image" />
               <p className="product-name">{dessert.strMeal}</p>
+              <p className="product-price">€{dessert.price}</p> {/* Display product price */}
             </motion.div>
           ))}
         </motion.div>

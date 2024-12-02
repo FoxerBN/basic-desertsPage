@@ -6,35 +6,35 @@ let currentTooltip;
 /**
  * @param {string} id
  * @param {HTMLElement} target
+ * @param {Array} desserts
  */
-export async function handleHover(id, target) {
+export async function handleHover(id, target, desserts) {
   if (window.innerWidth <= 1024) return;
+
+  // Nájdeme konkrétny produkt podľa ID
+  const product = desserts.find(dessert => dessert.idMeal === id);
 
   hoverTimeout = setTimeout(async () => {
     try {
       const { data } = await axios.get(
         `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
       );
-      const product = data.meals[0];
+      const details = data.meals[0];
 
       const ingredients = Array.from({ length: 20 }, (_, i) => {
-        const ingredient = product[`strIngredient${i + 1}`];
-        const measure = product[`strMeasure${i + 1}`];
+        const ingredient = details[`strIngredient${i + 1}`];
+        const measure = details[`strMeasure${i + 1}`];
         return ingredient?.trim() ? `${measure} ${ingredient}`.trim() : null;
       }).filter(Boolean);
-
-      const randomPrice = (Math.random() * 10 + 5).toFixed(2);
 
       currentTooltip = document.createElement("div");
       currentTooltip.classList.add("hover-tooltip");
       currentTooltip.innerHTML = `
-        <h3>${product.strMeal}</h3>
-        <img src="${product.strMealThumb}" alt="${
-        product.strMeal
-      }" style="width: 100%; border-radius: 5px;" />
-        <p><strong>Category:</strong> ${product.strCategory}</p>
-        <p><strong>Area:</strong> ${product.strArea}</p>
-        <p><strong>Price:</strong> €${randomPrice}</p>
+        <h3>${details.strMeal}</h3>
+        <img src="${details.strMealThumb}" alt="${details.strMeal}" style="width: 100%; border-radius: 5px;" />
+        <p><strong>Category:</strong> ${details.strCategory}</p>
+        <p><strong>Area:</strong> ${details.strArea}</p>
+        <p><strong>Price:</strong> €${product.price}</p> 
         <p><strong>Ingredients:</strong></p>
         <ul>${ingredients.map((item) => `<li>${item}</li>`).join("")}</ul>
       `;
@@ -49,9 +49,7 @@ export async function handleHover(id, target) {
         transition: "transform 0.3s ease",
       });
 
-      requestAnimationFrame(
-        () => (currentTooltip.style.transform = "scale(1)")
-      );
+      requestAnimationFrame(() => (currentTooltip.style.transform = "scale(1)"));
     } catch (error) {
       console.error("Error fetching product details:", error);
     }
