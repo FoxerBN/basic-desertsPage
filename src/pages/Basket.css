@@ -1,0 +1,114 @@
+
+.basket-container {
+  min-height: 100vh;
+  flex: 1;
+  position: relative;
+}
+
+.basket-image {
+  width: 100%;
+  height: 100vh;
+  background-image: url("basket.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.basket-content {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  z-index: 10;
+  font-family: Arial, sans-serif;
+}
+
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.basket-item p {
+  flex: 1;
+  text-align: left;
+}
+
+.basket-controls {
+  display: flex;
+  align-items: center;
+}
+
+.basket-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.basket-controls button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.basket-controls span {
+  font-size: 18px;
+  margin: 0 5px;
+  min-width: 30px;
+  text-align: center;
+  color: white;
+}
+
+.basket-content h2 {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.remove-button {
+    background: rgba(146, 32, 32, 0.281);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .remove-button:hover {
+    background: darkred;
+  }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+    .basket-content{
+        top: 130px;
+    }
+  }
