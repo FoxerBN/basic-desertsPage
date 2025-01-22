@@ -18,6 +18,9 @@ A simple **fake shopping page** featuring **pagination**, **API integration**, a
 
 ---
 
+![Alt text](./public/Snímka obrazovky1.png)
+
+
 ## 📂 Project Structure
 
 ```
