@@ -5,7 +5,7 @@ import './Basket.css';
 const Basket = () => {
   const [basketProducts, setBasketProducts] = useState([]);
 
-  // Load products from localStorage and ensure `quantity` exists
+  
   useEffect(() => {
     const fetchBasket = () => {
       const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
@@ -18,12 +18,12 @@ const Basket = () => {
 
     fetchBasket();
 
-    // Update on localStorage changes
+   
     window.addEventListener('storage', fetchBasket);
     return () => window.removeEventListener('storage', fetchBasket);
   }, []);
 
-  // Update product quantity
+ 
   const updateQuantity = (id, delta) => {
     const updatedProducts = basketProducts
       .map((product) =>
@@ -31,13 +31,13 @@ const Basket = () => {
           ? { ...product, quantity: product.quantity + delta }
           : product
       )
-      .filter((product) => product.quantity > 0); // Remove products with quantity 0
+      .filter((product) => product.quantity > 0); 
 
     setBasketProducts(updatedProducts);
     localStorage.setItem('products', JSON.stringify(updatedProducts));
   };
 
-  // Remove a product completely
+ 
   const removeProduct = (id) => {
     const updatedProducts = basketProducts.filter(
       (product) => product.idMeal !== id

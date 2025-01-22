@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css'; // Štýly pre footer
+import './Footer.css'; 
 
 const Footer = () => {
   return (

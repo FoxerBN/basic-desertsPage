@@ -11,7 +11,7 @@ let currentTooltip;
 export async function handleHover(id, target, desserts) {
   if (window.innerWidth <= 1024) return;
 
-  // Nájdeme konkrétny produkt podľa ID
+ 
   const product = desserts.find(dessert => dessert.idMeal === id);
 
   hoverTimeout = setTimeout(async () => {
@@ -40,7 +40,6 @@ export async function handleHover(id, target, desserts) {
       `;
       document.body.appendChild(currentTooltip);
 
-      // Position tooltip beside the hovered product
       const rect = target.getBoundingClientRect();
       Object.assign(currentTooltip.style, {
         left: `${rect.right + 10}px`,
