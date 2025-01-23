@@ -18,6 +18,9 @@ A simple **fake shopping page** featuring **pagination**, **API integration**, a
 
 ---
 
+![alt text](https://github.com/FoxerBN/basic-desertsPage/blob/master/public/Sn%C3%ADmka%20obrazovky1.png)
+![alt text](https://github.com/FoxerBN/basic-desertsPage/blob/master/public/Sn%C3%ADmka%20obrazovky2.png)
+![alt text](https://github.com/FoxerBN/basic-desertsPage/blob/master/public/Sn%C3%ADmka%20obrazovky3.png)
 
 ## 📂 Project Structure
 
